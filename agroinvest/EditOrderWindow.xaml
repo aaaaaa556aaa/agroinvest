@@ -1,0 +1,69 @@
+﻿<Window x:Class="AgroInvestApp.EditOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Заказ" Height="600" Width="550" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Клиент:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+        <ComboBox x:Name="cmbClient" Grid.Row="0" Grid.Column="1" Margin="5" 
+                  DisplayMemberPath="Название" SelectedValuePath="ID_клиента"
+                  SelectionChanged="CmbClient_SelectionChanged"/>
+
+        <TextBlock Text="Транспорт:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <ComboBox x:Name="cmbTransport" Grid.Row="1" Grid.Column="1" Margin="5"
+                  DisplayMemberPath="DisplayName" SelectedValuePath="ID_транспорта"/>
+
+        <TextBlock Text="Дата заказа:" Grid.Row="2" Grid.Column="0" Margin="5"/>
+        <DatePicker x:Name="dpOrderDate" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="Тип работы:" Grid.Row="3" Grid.Column="0" Margin="5"/>
+        <ComboBox x:Name="cmbWorkType" Grid.Row="3" Grid.Column="1" Margin="5" IsEditable="True">
+            <ComboBoxItem Content="Установка тахографа"/>
+            <ComboBoxItem Content="Ремонт"/>
+            <ComboBoxItem Content="ТО"/>
+        </ComboBox>
+
+        <TextBlock Text="Статус:" Grid.Row="4" Grid.Column="0" Margin="5"/>
+        <ComboBox x:Name="cmbStatus" Grid.Row="4" Grid.Column="1" Margin="5">
+            <ComboBoxItem Content="Новый"/>
+            <ComboBoxItem Content="В работе"/>
+            <ComboBoxItem Content="Выполнен"/>
+            <ComboBoxItem Content="Отменён"/>
+        </ComboBox>
+
+        <TextBlock Text="Стоимость (₽):" Grid.Row="5" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtCost" Grid.Row="5" Grid.Column="1" Margin="5"/>
+
+        <TextBlock Text="Рассрочка:" Grid.Row="6" Grid.Column="0" Margin="5"/>
+        <CheckBox x:Name="chkInstallment" Grid.Row="6" Grid.Column="1" Margin="5" 
+                  Checked="ChkInstallment_CheckedChanged" Unchecked="ChkInstallment_CheckedChanged"/>
+
+        <TextBlock Text="Срок рассрочки (мес):" Grid.Row="7" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtInstallmentMonths" Grid.Row="7" Grid.Column="1" Margin="5" IsEnabled="False"/>
+
+        <TextBlock Text="Комментарий:" Grid.Row="8" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="txtComment" Grid.Row="8" Grid.Column="1" Margin="5" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="btnSave" Content="Сохранить" Width="100" Margin="5" Click="BtnSave_Click"/>
+            <Button x:Name="btnCancel" Content="Отмена" Width="100" Margin="5" Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

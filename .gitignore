@@ -1,0 +1,51 @@
+# Visual Studio / C# общие исключения
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.vs/
+.vs/
+*.csproj.user
+*.sln.docstates
+
+# Папки сборки и отладки
+Debug/
+Release/
+x64/
+x86/
+
+# Файлы локальных БД (если создаются)
+*.mdf
+*.ldf
+*.db
+*.sdf
+*.sqlite
+
+# Файлы конфигурации с паролями (если App.config содержит чувствительные данные)
+App.config
+*.config.user
+
+# Временные файлы
+*.tmp
+*.temp
+*~
+*.log
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Результаты тестов
+TestResults/
+
+# Папка с установленными пакетами NuGet (обычно восстанавливается)
+packages/
+*.nupkg
+
+# Файлы диагностики
+*.diag
+
+# Резервные копии
+*.bak
+*.backup
